@@ -1,0 +1,87 @@
+
+package com.helper.panel.tab_1;
+
+import com.helper.util.PropertyUtils;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * <p>
+ * <code>SourcePane</code>
+ * </p>
+ * Description: 左上配置
+ *
+ * @author Mcchu
+ * @date 2018/3/2 16:39
+ */
+public class MysqlTopPane extends JPanel{
+
+    @Getter
+    private JTextField datasourceIP,datasourcePort,datasourceName;
+
+    @Getter
+    private JTextField datasourceUsername,datasourcePassword;
+
+    @Getter
+    private JButton testConn;
+
+    @Getter
+    @Setter
+    private JLabel testConnLabel;
+
+    @Getter
+    private JComboBox datasourceType;
+
+    @SuppressWarnings("unchecked")
+    public MysqlTopPane() {
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+
+        add(new JLabel(PropertyUtils.getValue("label.datasourceType",PropertyUtils.GENERATOR_PATH)), gbc);
+        gbc.gridy++;
+        add(new JLabel(PropertyUtils.getValue("label.datasourceIP",PropertyUtils.GENERATOR_PATH)), gbc);
+        gbc.gridy++;
+        add(new JLabel(PropertyUtils.getValue("label.datasourcePort",PropertyUtils.GENERATOR_PATH)), gbc);
+        gbc.gridy++;
+        add(new JLabel(PropertyUtils.getValue("label.datasourceName",PropertyUtils.GENERATOR_PATH)), gbc);
+        gbc.gridy++;
+        add(new JLabel(PropertyUtils.getValue("label.datasourceUsername",PropertyUtils.GENERATOR_PATH)), gbc);
+        gbc.gridy++;
+        add(new JLabel(PropertyUtils.getValue("label.datasourcePassword",PropertyUtils.GENERATOR_PATH)), gbc);
+        gbc.gridy++;
+        add(new JLabel(" "), gbc);
+        gbc.gridy++;
+        add(testConn = new JButton(PropertyUtils.getValue("label.testConn",PropertyUtils.GENERATOR_PATH)), gbc);
+
+        gbc.gridx++;
+        gbc.gridy = 0;
+        gbc.weightx = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        datasourceType = new JComboBox();
+        datasourceType.addItem("mysql");
+        add(datasourceType, gbc);
+        gbc.gridy++;
+        add((datasourceIP = new JTextField("127.0.0.1",10)), gbc);
+        gbc.gridy++;
+        add((datasourcePort = new JTextField("3306",10)), gbc);
+        gbc.gridy++;
+        add((datasourceName = new JTextField("demo",10)), gbc);
+        gbc.gridy++;
+        add((datasourceUsername = new JTextField("root",10)), gbc);
+        gbc.gridy++;
+        add((datasourcePassword = new JPasswordField("root",10)), gbc);
+        gbc.gridy++;
+        add(new JLabel(" "), gbc);
+        gbc.gridy++;
+        add(testConnLabel = new JLabel(""), gbc);
+    }
+
+}
