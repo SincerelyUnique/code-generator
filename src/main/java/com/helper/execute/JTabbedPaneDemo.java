@@ -38,7 +38,7 @@ public class JTabbedPaneDemo
                 JPanel panel2 = new OAGeneralPane();
                 JPanel panel3 = new MysqlPane();
                 JPanel panel4 = new TextPane();
-                JPanel panel5 = new JPanel ();
+                JPanel panel5 = new JPanel();
                 tp.addTab("panel1", panel1); //添加选项卡容器，并且设置其中每个选项卡的标签以及其是否可启用
                 tp.setEnabledAt(0,true);
                 tp.setTitleAt(0,PropertyUtils.getValue("panel.title.oaGenerator",PropertyUtils.SYSTEM_PATH));
@@ -58,6 +58,7 @@ public class JTabbedPaneDemo
                 tp.addTab ("panel5", panel5);
                 tp.setEnabledAt(4,true);
                 tp.setTitleAt(4,PropertyUtils.getValue("panel.title.other",PropertyUtils.SYSTEM_PATH));
+
                 ///设置其大小以及其选项卡的位置方向
                 tp.setPreferredSize (new Dimension (600,600));
                 tp.setTabPlacement (JTabbedPane.TOP);
@@ -65,17 +66,6 @@ public class JTabbedPaneDemo
                 tp.setTabLayoutPolicy (JTabbedPane.SCROLL_TAB_LAYOUT);
                 frame.pack();
 
-                //创建标签组件，将五个中间容器设置为流布局，并且将标签组件分别放入到其中
-                JLabel l5=new JLabel(PropertyUtils.getValue("panel.title.other",PropertyUtils.SYSTEM_PATH));
-                JLabel l6=new JLabel(PropertyUtils.getValue("panel.title.other",PropertyUtils.SYSTEM_PATH));
-                JLabel l7=new JLabel(PropertyUtils.getValue("panel.title.other",PropertyUtils.SYSTEM_PATH));
-                JLabel l8=new JLabel(PropertyUtils.getValue("panel.title.other",PropertyUtils.SYSTEM_PATH));
-
-                panel5.setLayout(new FlowLayout());
-
-                panel5.add(l7);
-                panel5.add(l8);
-                frame.pack();
             }
         });
     }
