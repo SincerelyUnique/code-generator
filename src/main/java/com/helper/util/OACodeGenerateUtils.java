@@ -119,6 +119,7 @@ public class OACodeGenerateUtils {
         if (label.isEntityRBtnSelect()){ generateModelFile(columnDefinitionList); }
         if (label.isDaoRBtnSelect()){ generateDaoFile(columnDefinitionList); }
 
+        conn.close();
     }
 
     /**

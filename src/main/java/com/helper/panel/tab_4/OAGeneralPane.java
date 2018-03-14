@@ -4,6 +4,7 @@ import com.helper.model.GeneratorCheckBoxLabel;
 import com.helper.model.GeneratorPageInfo;
 import com.helper.util.CodeGenerateUtils;
 import com.helper.util.DBUtils;
+import com.helper.util.OAGeneralCodeUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -114,7 +115,7 @@ public class OAGeneralPane extends JPanel {
                     info.setDiskPath(diskPath);
 
                     System.out.println(info.toString());
-                    CodeGenerateUtils codeGenerateUtils = new CodeGenerateUtils( info );
+                    OAGeneralCodeUtils codeGenerateUtils = new OAGeneralCodeUtils( info );
                     codeGenerateUtils.generate( label );
                     System.out.println("======Code Generator Success=======");
                 }catch (Exception ex){
