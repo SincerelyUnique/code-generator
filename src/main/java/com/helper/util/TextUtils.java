@@ -67,7 +67,11 @@ public class TextUtils {
      * @return 长度
      */
     public static String countByte( String text ){
-        return String.valueOf(text.length());
+        try {
+            return String.valueOf(text.getBytes("gbk").length);
+        }catch (Exception e){
+            return "0";
+        }
     }
 
     /**
@@ -130,5 +134,18 @@ public class TextUtils {
             count++;
         }
         return count;
+    }
+
+    public static void main(String[] args) {
+        try {
+            String a = "123abc#$";
+            int num = a.getBytes("gbk").length;
+            System.out.println(num);
+            a = "中文";
+            num = a.getBytes("gbk").length;
+            System.out.println(num);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
