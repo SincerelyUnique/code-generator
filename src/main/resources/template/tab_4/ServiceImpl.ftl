@@ -1,16 +1,15 @@
 package ${package_name}.service.impl;
-import com.evada.inno.core.service.impl.BaseServiceImpl;
+
 import ${package_name}.model.${table_name};
-import ${package_name}.repository.${table_name}Repository;
 import ${package_name}.service.I${table_name}Service;
-import ${package_name}.repository.mybatis.${table_name}DAO;
+import ${package_name}.dao.${table_name}DAO;
+import ${package_name}.dto.${table_name}DTO;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ${package_name}.dto.${table_name}DTO;
 import org.apache.commons.beanutils.BeanUtils;
-import com.evada.inno.core.enums.StatusEnum;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 /**
 * 描述：${table_annotation} 服务实现层
@@ -18,45 +17,39 @@ import org.springframework.data.domain.Pageable;
 * @date ${date}
 */
 @Service
-public class ${table_name}ServiceImpl extends BaseServiceImpl<${table_name}, String> implements I${table_name}Service {
+public class ${table_name}ServiceImpl implements I${table_name}Service {
 
     @Autowired
     private ${table_name}DAO ${table_name?uncap_first}DAO;
 
-    @Autowired
-    private ${table_name}Repository ${table_name?uncap_first}Repository;
-
     @Override
-    public ${table_name}DTO findDTOById(String id) throws Exception {
-        ${table_name}DTO ${table_name?uncap_first}DTO = ${table_name?uncap_first}DAO.findDTOById(id);
-        return ${table_name?uncap_first}DTO;
+    public ${table_name} findById(String id) {
+        ${table_name} ${table_name?uncap_first} = ${table_name?uncap_first}DAO.findById(id);
+        return ${table_name?uncap_first};
     }
 
     @Override
-    public ${table_name}DTO create${table_name}(${table_name}DTO ${table_name?uncap_first}DTO) throws Exception {
+    public void create${table_name}(${table_name}DTO ${table_name?uncap_first}DTO) throws Exception {
         ${table_name} ${table_name?uncap_first} = new ${table_name}();
         BeanUtils.copyProperties(${table_name?uncap_first},${table_name?uncap_first}DTO);
-        ${table_name?uncap_first}.setStatus(StatusEnum.ENABLE.toString());
-        ${table_name?uncap_first} = ${table_name?uncap_first}Repository.saveAndFlush(${table_name?uncap_first});
-        return this.findDTOById(${table_name?uncap_first}.getId());
+        ${table_name?uncap_first}DAO.insert( ${table_name?uncap_first} );
     }
 
     @Override
-    public ${table_name}DTO update${table_name}(${table_name}DTO ${table_name?uncap_first}DTO)throws Exception {
+    public void update${table_name}(${table_name}DTO ${table_name?uncap_first}DTO) throws Exception {
         ${table_name} ${table_name?uncap_first} = new ${table_name}();
         BeanUtils.copyProperties(${table_name?uncap_first},${table_name?uncap_first}DTO);
-        ${table_name?uncap_first} = ${table_name?uncap_first}Repository.saveAndFlush(${table_name?uncap_first});
-        return this.findDTOById(${table_name?uncap_first}.getId());
+        ${table_name?uncap_first}DAO.update( ${table_name?uncap_first} );
     }
 
-    /**
-    * 描述：查询列表(分页)
-    * @param ${table_name?uncap_first}DTO 实体DTO
-    * @param page  分页参数
-    */
     @Override
-    public Page<${table_name}DTO> find${table_name}Page(${table_name}DTO ${table_name?uncap_first}DTO, Pageable page) throws Exception{
-        return ${table_name?uncap_first}DAO.find${table_name}Page(${table_name?uncap_first}DTO,page);
+    public void delete${table_name}(String id) {
+        ${table_name?uncap_first}DAO.delete( id );
+    }
+
+    @Override
+    public List<${table_name}> find${table_name}Page(Integer pageNum,Integer pageSize) {
+        return ${table_name?uncap_first}DAO.findAndPager( pageNum, pageSize );
     }
 
 }

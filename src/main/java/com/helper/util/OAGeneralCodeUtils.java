@@ -123,7 +123,7 @@ public class OAGeneralCodeUtils {
 
             if ( label.isDaoRBtnSelect() ){
                 generateDaoFile();                 // 生成Dao文件
-                generateRepositoryFile();          // 生成Repository文件
+                //generateRepositoryFile();          // 生成Repository文件
             }
 
             if ( label.isServiceRBtnSelect() ){

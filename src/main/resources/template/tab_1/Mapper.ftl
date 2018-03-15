@@ -1,27 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="${package_name}.repository.mybatis.${table_name}DAO">
+<mapper namespace="${package_name}.dao.${table_name}DAO">
 
-    <resultMap id="${table_name}DTOResultMap" type="${package_name}.dto.${table_name}DTO"></resultMap>
+    <!-- 数据库字段实体映射配置 -->
+    <resultMap id="${table_name}ResultMap" type="${package_name}.model.${table_name}">
+        <id column="id" property="id" jdbcType="" />
+        <!-- 补充其他字段 -->
+    </resultMap>
 
-    <sql id="findDtoSql">
-        select * from (
-        select * from  ${table_name_small} temp
-        ) t
+    <!-- SQL片段 -->
+    <sql id="baseColumns">
+        *
+        <!-- 或设置具体字段 -->
     </sql>
 
-    <select id="findDTOById" parameterType="String" resultMap="${table_name}DTOResultMap">
-        <include refid="findDtoSql"></include>
-        <where>
-            and t.id = ${r'#{id}'}
-        </where>
+    <!-- 插入 -->
+    <insert id="insert" parameterType="com.jalen.demo.model.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT  INTO ${table_name_small} (  )
+        VALUES (  )
+    </insert>
+
+    <!-- 根据ID查询 -->
+    <select id="findById" parameterType="" resultType="${package_name}.model.${table_name}">
+        SELECT  <include refid="baseColumns"/>
+        FROM  ${table_name_small} a
+        WHERE  a.id =
     </select>
 
-    <select id="find${table_name}Page" parameterType="${package_name}.dto.${table_name}DTO" resultMap="${table_name}DTOResultMap">
-        <include refid="findDtoSql" />
-        <where>
+    <!-- 查询全部 -->
+    <select id="findAll" resultType="${package_name}.model.${table_name}">
+        SELECT  <include refid="baseColumns"/>
+        FROM  ${table_name_small} a
+    </select>
 
-        </where>
+    <!-- 更新单条记录 -->
+    <update id="update">
+        UPDATE  user
+        SET
+        WHERE  id =
+    </update>
+
+    <!-- 根据ID删除 -->
+    <update id="delete">
+        DELETE  FROM ${table_name_small}
+        WHERE  id =
+    </update>
+
+    <!-- 分页查询 -->
+    <select id="findAndPager" resultType="com.jalen.demo.model.User">
+        SELECT  <include refid="baseColumns"/>
+        FROM  ${table_name_small} a
     </select>
 
 </mapper>

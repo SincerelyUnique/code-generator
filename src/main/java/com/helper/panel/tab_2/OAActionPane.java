@@ -40,7 +40,7 @@ public class OAActionPane extends JPanel {
         instruction.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JPanel jPanel = new JPanel();
-                JOptionPane.showMessageDialog(jPanel, PropertyUtils.getValue("btn.instruction.content",
+                JOptionPane.showMessageDialog(jPanel, PropertyUtils.getValue("btn.instruction.content_tab2",
                         PropertyUtils.GENERATOR_PATH), "INSTRUCTION",JOptionPane.INFORMATION_MESSAGE);
             }
         });

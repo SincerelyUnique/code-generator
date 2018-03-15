@@ -135,6 +135,13 @@
       <version>1.2.41</version>
     </dependency>
 
+    <!-- apache bean utils -->
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.8.3</version>
+    </dependency>
+
     <dependency>
       <groupId>com.beautyeye.cloud</groupId>  <!--自定义-->
       <artifactId>cloud</artifactId>    <!--自定义-->

@@ -49,7 +49,7 @@ public class OAGeneralCenterPane extends JPanel {
         gbc.weightx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        add((tableNameField = new JTextField("formtable_main_187",10)), gbc);
+        add((tableNameField = new JTextField("tbl_requisition_contract",10)), gbc);
         tableNameField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
 
         gbc.gridy++;
@@ -57,7 +57,7 @@ public class OAGeneralCenterPane extends JPanel {
         authorField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
 
         gbc.gridy++;
-        add((tableAnnotationField = new JTextField("the table description",10)), gbc);
+        add((tableAnnotationField = new JTextField("contract table",10)), gbc);
         tableAnnotationField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
 
         gbc.gridy++;
