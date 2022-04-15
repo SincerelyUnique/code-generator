@@ -13,10 +13,12 @@ import java.io.IOException;
  */
 public class FreeMarkerTemplateUtils {
 
-    private FreeMarkerTemplateUtils(){}
+    private FreeMarkerTemplateUtils() {
+    }
+
     private static Configuration CONFIGURATION = new Configuration(Configuration.VERSION_2_3_22);
 
-    static{
+    static {
         CONFIGURATION.setDefaultEncoding("UTF-8");
         CONFIGURATION.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         CONFIGURATION.setCacheStorage(NullCacheStorage.INSTANCE);

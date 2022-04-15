@@ -31,6 +31,7 @@ public class PropertyUtils {
 
     /**
      * 缓存配置文件的值
+     *
      * @param propName 配置文件名称
      */
     private static void cacheProperties(String propName) {
@@ -45,7 +46,7 @@ public class PropertyUtils {
                 }
                 valueMap.put(propName, map);
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -67,10 +68,11 @@ public class PropertyUtils {
 
     /**
      * 测试
+     *
      * @param args args
      */
     public static void main(String[] args) {
-        String str = getValue("server.ip",SYSTEM_PATH);
+        String str = getValue("server.ip", SYSTEM_PATH);
         System.out.println(str);
     }
 }

@@ -28,7 +28,7 @@ public class OAPane extends JPanel {
     private OAActionPane actionPane;
 
 
-    public OAPane( ) {
+    public OAPane() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -45,7 +45,7 @@ public class OAPane extends JPanel {
         testConnBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // 点击测试连接时，打印testConnLabel提示
-                String sourceType = (String)sourcePane.getDatasourceType().getSelectedItem();
+                String sourceType = (String) sourcePane.getDatasourceType().getSelectedItem();
                 String sourceIP = sourcePane.getDatasourceIP().getText();
                 String sourcePort = sourcePane.getDatasourcePort().getText();
                 String sourceName = sourcePane.getDatasourceName().getText();
@@ -53,12 +53,12 @@ public class OAPane extends JPanel {
                 String sourcePassword = sourcePane.getDatasourcePassword().getText();
 
                 System.out.println(sourceType);
-                Connection conn = DBUtils.getConnection(sourceType,sourceIP,sourcePort,sourceName,sourceUsername,
+                Connection conn = DBUtils.getConnection(sourceType, sourceIP, sourcePort, sourceName, sourceUsername,
                         sourcePassword);
-                if ( null != conn ){
+                if (null != conn) {
                     sourcePane.getTestConnLabel().setText("      Success! ");
                     sourcePane.getTestConnLabel().setForeground(Color.blue);
-                }else {
+                } else {
                     sourcePane.getTestConnLabel().setText("      Error! ");
                     sourcePane.getTestConnLabel().setForeground(Color.red);
                 }
@@ -78,9 +78,9 @@ public class OAPane extends JPanel {
                 // 点击生成代码时，根据上面数据进行生成
                 boolean l2 = systemDatabasePane.getEntityRBtn().isSelected();
                 boolean l5 = systemDatabasePane.getDAORBtn().isSelected();
-                GeneratorCheckBoxLabel label = new GeneratorCheckBoxLabel(false,l2,false,false,l5,false);
+                GeneratorCheckBoxLabel label = new GeneratorCheckBoxLabel(false, l2, false, false, l5, false);
 
-                String sourceType = (String)sourcePane.getDatasourceType().getSelectedItem();
+                String sourceType = (String) sourcePane.getDatasourceType().getSelectedItem();
                 String sourceIP = sourcePane.getDatasourceIP().getText();
                 String sourcePort = sourcePane.getDatasourcePort().getText();
                 String sourceName = sourcePane.getDatasourceName().getText();
@@ -112,10 +112,10 @@ public class OAPane extends JPanel {
                     info.setSql(sql.toUpperCase());
 
                     System.out.println(info.toString());
-                    OACodeGenerateUtils codeGenerateUtils = new OACodeGenerateUtils( info );
-                    codeGenerateUtils.generate( label, tableName );
+                    OACodeGenerateUtils codeGenerateUtils = new OACodeGenerateUtils(info);
+                    codeGenerateUtils.generate(label, tableName);
                     System.out.println("======Code Generator Success=======");
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     System.out.println("======Code Generator failure=======");
                     ex.printStackTrace();
                 }

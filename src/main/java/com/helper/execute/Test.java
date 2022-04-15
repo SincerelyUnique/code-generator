@@ -3,6 +3,7 @@ package com.helper.execute;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 import org.jb2011.lnf.beautyeye.ch3_button.BEButtonUI;
 import org.jb2011.lnf.beautyeye.ch8_toolbar.BEToolBarUI;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -23,7 +24,7 @@ public class Test {
     private JCheckBox foot = null;
     private JMenuBar menuBar = null;
 
-    public Test(){
+    public Test() {
         try {
             BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.translucencyAppleLike;
             org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
@@ -44,28 +45,36 @@ public class Test {
             login.addMouseListener(new MouseListener() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    if(null == username.getText() || "".equals(username.getText())) {
+                    if (null == username.getText() || "".equals(username.getText())) {
                         JOptionPane.showMessageDialog(null, "用户名不能为空");
                         return;
                     }
-                    if(null == password.getText() || "".equals(password.getText())) {
+                    if (null == password.getText() || "".equals(password.getText())) {
                         JOptionPane.showMessageDialog(null, "密码不能为空");
                         return;
                     }
-                    if(null != username.getText() && "wbb".equals(username.getText()) && null != password.getText() && "123".equals(password.getText())) {
+                    if (null != username.getText() && "wbb".equals(username.getText()) && null != password.getText() && "123".equals(password.getText())) {
                         JOptionPane.showMessageDialog(null, "登录成功，欢迎您：" + username.getText());
                     } else {
                         JOptionPane.showMessageDialog(null, "用户名密码错误，请重新输入");
                     }
                 }
+
                 @Override
-                public void mousePressed(MouseEvent e) { }
+                public void mousePressed(MouseEvent e) {
+                }
+
                 @Override
-                public void mouseReleased(MouseEvent e) { }
+                public void mouseReleased(MouseEvent e) {
+                }
+
                 @Override
-                public void mouseEntered(MouseEvent e) { }
+                public void mouseEntered(MouseEvent e) {
+                }
+
                 @Override
-                public void mouseExited(MouseEvent e) { }
+                public void mouseExited(MouseEvent e) {
+                }
             });
             reset.addMouseListener(new MouseListener() {
                 @Override
@@ -73,14 +82,22 @@ public class Test {
                     username.setText("");
                     password.setText("");
                 }
+
                 @Override
-                public void mousePressed(MouseEvent e) { }
+                public void mousePressed(MouseEvent e) {
+                }
+
                 @Override
-                public void mouseReleased(MouseEvent e) { }
+                public void mouseReleased(MouseEvent e) {
+                }
+
                 @Override
-                public void mouseEntered(MouseEvent e) { }
+                public void mouseEntered(MouseEvent e) {
+                }
+
                 @Override
-                public void mouseExited(MouseEvent e) { }
+                public void mouseExited(MouseEvent e) {
+                }
             });
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,15 +141,15 @@ public class Test {
 
         // ***** create File menu
         JMenu fileMenu = (JMenu) menuBar.add(new JMenu("文件"));
-        createMenuItem(fileMenu, "新建", "FileMenu.about_mnemonic", "新建文件",null);
-        createMenuItem(fileMenu, "保存", "FileMenu.about_mnemonic", "保存文件",null);
-        createMenuItem(fileMenu, "删除", "FileMenu.about_mnemonic", "删除文件",null);
-        createMenuItem(fileMenu, "另存为...", "FileMenu.about_mnemonic", "另存为...",null);
+        createMenuItem(fileMenu, "新建", "FileMenu.about_mnemonic", "新建文件", null);
+        createMenuItem(fileMenu, "保存", "FileMenu.about_mnemonic", "保存文件", null);
+        createMenuItem(fileMenu, "删除", "FileMenu.about_mnemonic", "删除文件", null);
+        createMenuItem(fileMenu, "另存为...", "FileMenu.about_mnemonic", "另存为...", null);
         fileMenu.addSeparator();
         JMenu editMenu = (JMenu) menuBar.add(new JMenu("编辑"));
-        createMenuItem(editMenu, "字体大小", "FileMenu.about_mnemonic", "字体大小",null);
-        createMenuItem(editMenu, "颜色", "FileMenu.about_mnemonic", "颜色",null);
-        createMenuItem(editMenu, "格式", "FileMenu.about_mnemonic", "格式",null);
+        createMenuItem(editMenu, "字体大小", "FileMenu.about_mnemonic", "字体大小", null);
+        createMenuItem(editMenu, "颜色", "FileMenu.about_mnemonic", "颜色", null);
+        createMenuItem(editMenu, "格式", "FileMenu.about_mnemonic", "格式", null);
         fileMenu.addSeparator();
         editMenu.addSeparator();
         return menuBar;
@@ -146,7 +163,7 @@ public class Test {
         mi.setMnemonic(mnemonic.charAt(0));
         mi.getAccessibleContext().setAccessibleDescription(accessibleDescription);
         mi.addActionListener(action);
-        if(action == null) {
+        if (action == null) {
             mi.setEnabled(false);
         }
         return mi;
@@ -154,7 +171,7 @@ public class Test {
 
     public static void main(String[] args) {
         //隐藏设置按钮
-        UIManager.put("RootPane.setupButtonVisible",false);
+        UIManager.put("RootPane.setupButtonVisible", false);
 //        //定义border颜色
 //        Border bd = new BEToolBarUI.ToolBarBorder(
 //                UIManager.getColor(Color.green),//Floatable时触点的颜色

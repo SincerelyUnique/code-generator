@@ -22,17 +22,17 @@ import java.awt.*;
 public class TextBottomPane extends JPanel {
 
     @Getter
-    private JButton upperToLowerBtn,lowerToUpperBtn;
+    private JButton upperToLowerBtn, lowerToUpperBtn;
 
     @Getter
-    private JButton stringToUnicodeBtn,unicodeToStringBtn;
+    private JButton stringToUnicodeBtn, unicodeToStringBtn;
 
     @Getter
     private JButton countByteBtn;
 
     public TextBottomPane() {
         setLayout(new GridBagLayout());
-        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.operate",PropertyUtils.GENERATOR_PATH)), new EmptyBorder(8, 0, 0, 0)));
+        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.operate", PropertyUtils.GENERATOR_PATH)), new EmptyBorder(8, 0, 0, 0)));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -40,15 +40,15 @@ public class TextBottomPane extends JPanel {
         gbc.anchor = GridBagConstraints.WEST;
 
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.add((upperToLowerBtn = new JButton(PropertyUtils.getValue("label.toLower",PropertyUtils.GENERATOR_PATH))), gbc);
+        panel.add((upperToLowerBtn = new JButton(PropertyUtils.getValue("label.toLower", PropertyUtils.GENERATOR_PATH))), gbc);
         gbc.gridx++;
-        panel.add((lowerToUpperBtn = new JButton(PropertyUtils.getValue("label.toUpper",PropertyUtils.GENERATOR_PATH))), gbc);
+        panel.add((lowerToUpperBtn = new JButton(PropertyUtils.getValue("label.toUpper", PropertyUtils.GENERATOR_PATH))), gbc);
         gbc.gridx++;
-        panel.add((stringToUnicodeBtn = new JButton(PropertyUtils.getValue("label.toUnicode",PropertyUtils.GENERATOR_PATH))), gbc);
+        panel.add((stringToUnicodeBtn = new JButton(PropertyUtils.getValue("label.toUnicode", PropertyUtils.GENERATOR_PATH))), gbc);
         gbc.gridx++;
-        panel.add((unicodeToStringBtn = new JButton(PropertyUtils.getValue("label.toString",PropertyUtils.GENERATOR_PATH))), gbc);
+        panel.add((unicodeToStringBtn = new JButton(PropertyUtils.getValue("label.toString", PropertyUtils.GENERATOR_PATH))), gbc);
         gbc.gridx++;
-        panel.add((countByteBtn = new JButton(PropertyUtils.getValue("label.counter",PropertyUtils.GENERATOR_PATH))), gbc);
+        panel.add((countByteBtn = new JButton(PropertyUtils.getValue("label.counter", PropertyUtils.GENERATOR_PATH))), gbc);
 
         gbc.gridx++;
         gbc.weightx = 1;

@@ -26,7 +26,7 @@ public class OADatabasePane extends JPanel {
 
     public OADatabasePane() {
         setLayout(new GridBagLayout());
-        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.generatorConfig",PropertyUtils.GENERATOR_PATH)), new EmptyBorder(12, 0, 0, 0)));
+        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.generatorConfig", PropertyUtils.GENERATOR_PATH)), new EmptyBorder(12, 0, 0, 0)));
 
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -34,45 +34,45 @@ public class OADatabasePane extends JPanel {
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.WEST;
 
-        add(new JLabel(PropertyUtils.getValue("label.tableNameField",PropertyUtils.GENERATOR_PATH)), gbc);
+        add(new JLabel(PropertyUtils.getValue("label.tableNameField", PropertyUtils.GENERATOR_PATH)), gbc);
         gbc.gridy++;
-        add(new JLabel(PropertyUtils.getValue("label.authorField",PropertyUtils.GENERATOR_PATH)), gbc);
+        add(new JLabel(PropertyUtils.getValue("label.authorField", PropertyUtils.GENERATOR_PATH)), gbc);
         gbc.gridy++;
-        add(new JLabel(PropertyUtils.getValue("label.tableAnnotationField",PropertyUtils.GENERATOR_PATH)), gbc);
+        add(new JLabel(PropertyUtils.getValue("label.tableAnnotationField", PropertyUtils.GENERATOR_PATH)), gbc);
         gbc.gridy++;
-        add(new JLabel(PropertyUtils.getValue("label.packageField",PropertyUtils.GENERATOR_PATH)), gbc);
+        add(new JLabel(PropertyUtils.getValue("label.packageField", PropertyUtils.GENERATOR_PATH)), gbc);
         gbc.gridy++;
-        add(new JLabel(PropertyUtils.getValue("label.diskPathField",PropertyUtils.GENERATOR_PATH)), gbc);
+        add(new JLabel(PropertyUtils.getValue("label.diskPathField", PropertyUtils.GENERATOR_PATH)), gbc);
         gbc.gridy++;
-        add(new JLabel(PropertyUtils.getValue("label.sql",PropertyUtils.GENERATOR_PATH)), gbc);
+        add(new JLabel(PropertyUtils.getValue("label.sql", PropertyUtils.GENERATOR_PATH)), gbc);
 
         gbc.gridx++;
         gbc.gridy = 0;
         gbc.weightx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        add((tableNameField = new JTextField("formtable_main_187",10)), gbc);
-        tableNameField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
+        add((tableNameField = new JTextField("formtable_main_187", 10)), gbc);
+        tableNameField.setFont(new Font("标楷体", Font.TRUETYPE_FONT | Font.ITALIC, 12));
 
         gbc.gridy++;
-        add((authorField = new JTextField("mcchu",10)), gbc);
-        authorField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
+        add((authorField = new JTextField("mcchu", 10)), gbc);
+        authorField.setFont(new Font("标楷体", Font.TRUETYPE_FONT | Font.ITALIC, 12));
 
         gbc.gridy++;
-        add((tableAnnotationField = new JTextField("the table description",10)), gbc);
-        tableAnnotationField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
+        add((tableAnnotationField = new JTextField("the table description", 10)), gbc);
+        tableAnnotationField.setFont(new Font("标楷体", Font.TRUETYPE_FONT | Font.ITALIC, 12));
 
         gbc.gridy++;
-        add((packageField = new JTextField("com.iflytek.",10)), gbc);
-        packageField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
+        add((packageField = new JTextField("com.iflytek.", 10)), gbc);
+        packageField.setFont(new Font("标楷体", Font.TRUETYPE_FONT | Font.ITALIC, 12));
 
         gbc.gridy++;
-        add(diskPathField = new JTextField("D://",10), gbc);
-        diskPathField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
+        add(diskPathField = new JTextField("D://", 10), gbc);
+        diskPathField.setFont(new Font("标楷体", Font.TRUETYPE_FONT | Font.ITALIC, 12));
 
         gbc.gridy++;
-        add(sqlField = new JTextField("select * from table_name",10), gbc);
-        sqlField.setFont(new Font("标楷体",Font.TRUETYPE_FONT|Font.ITALIC,12));
+        add(sqlField = new JTextField("select * from table_name", 10), gbc);
+        sqlField.setFont(new Font("标楷体", Font.TRUETYPE_FONT | Font.ITALIC, 12));
     }
 
 }

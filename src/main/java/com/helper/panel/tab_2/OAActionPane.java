@@ -36,36 +36,36 @@ public class OAActionPane extends JPanel {
         gbc.insets = new Insets(4, 4, 4, 4);
 
         // 说明按钮
-        add((instruction = new JButton(PropertyUtils.getValue("btn.instruction",PropertyUtils.GENERATOR_PATH))), gbc);
+        add((instruction = new JButton(PropertyUtils.getValue("btn.instruction", PropertyUtils.GENERATOR_PATH))), gbc);
         instruction.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JPanel jPanel = new JPanel();
                 JOptionPane.showMessageDialog(jPanel, PropertyUtils.getValue("btn.instruction.content_tab2",
-                        PropertyUtils.GENERATOR_PATH), "INSTRUCTION",JOptionPane.INFORMATION_MESSAGE);
+                        PropertyUtils.GENERATOR_PATH), "INSTRUCTION", JOptionPane.INFORMATION_MESSAGE);
             }
         });
         gbc.gridy++;
 
         // 清空按钮
-        add((clear = new JButton(PropertyUtils.getValue("btn.clear",PropertyUtils.GENERATOR_PATH))), gbc);
+        add((clear = new JButton(PropertyUtils.getValue("btn.clear", PropertyUtils.GENERATOR_PATH))), gbc);
         gbc.gridy++;
 
         // 帮助按钮
-        add((help = new JButton(PropertyUtils.getValue("btn.help",PropertyUtils.GENERATOR_PATH))), gbc);
+        add((help = new JButton(PropertyUtils.getValue("btn.help", PropertyUtils.GENERATOR_PATH))), gbc);
         help.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JPanel jPanel = new JPanel();
-                JOptionPane.showMessageDialog(jPanel, PropertyUtils.getValue("btn.help.content",PropertyUtils.GENERATOR_PATH), "HELP",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(jPanel, PropertyUtils.getValue("btn.help.content", PropertyUtils.GENERATOR_PATH), "HELP", JOptionPane.INFORMATION_MESSAGE);
             }
         });
         gbc.gridy++;
 
         // 版本按钮
-        add((version = new JButton(PropertyUtils.getValue("btn.version",PropertyUtils.GENERATOR_PATH))), gbc);
+        add((version = new JButton(PropertyUtils.getValue("btn.version", PropertyUtils.GENERATOR_PATH))), gbc);
         version.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JPanel jPanel = new JPanel();
-                JOptionPane.showMessageDialog(jPanel, "Version 1.0.1", "VERSION",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(jPanel, "Version 1.0.1", "VERSION", JOptionPane.INFORMATION_MESSAGE);
             }
         });
         gbc.gridy++;

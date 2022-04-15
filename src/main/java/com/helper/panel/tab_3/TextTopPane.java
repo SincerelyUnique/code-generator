@@ -26,7 +26,7 @@ public class TextTopPane extends JPanel {
 
     public TextTopPane() {
         setLayout(new GridBagLayout());
-        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.input",PropertyUtils.GENERATOR_PATH)), new EmptyBorder(12, 0, 0, 0)));
+        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.input", PropertyUtils.GENERATOR_PATH)), new EmptyBorder(12, 0, 0, 0)));
 
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -34,14 +34,14 @@ public class TextTopPane extends JPanel {
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.WEST;
 
-        add(new JLabel(PropertyUtils.getValue("label.input.content",PropertyUtils.GENERATOR_PATH)), gbc);
+        add(new JLabel(PropertyUtils.getValue("label.input.content", PropertyUtils.GENERATOR_PATH)), gbc);
 
         gbc.gridx++;
         gbc.gridy = 0;
         gbc.weightx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        add((textInputArea = new TextArea("", 10, 43,TextArea.SCROLLBARS_VERTICAL_ONLY)), gbc);
+        add((textInputArea = new TextArea("", 10, 43, TextArea.SCROLLBARS_VERTICAL_ONLY)), gbc);
 
     }
 

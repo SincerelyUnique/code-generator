@@ -29,7 +29,7 @@ public class OAGeneralPane extends JPanel {
     private OAGeneralRightPane rightPane;
 
 
-    public OAGeneralPane( ) {
+    public OAGeneralPane() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -46,7 +46,7 @@ public class OAGeneralPane extends JPanel {
         testConnBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // 点击测试连接时，打印testConnLabel提示
-                String sourceType = (String)topPane.getDatasourceType().getSelectedItem();
+                String sourceType = (String) topPane.getDatasourceType().getSelectedItem();
                 String sourceIP = topPane.getDatasourceIP().getText();
                 String sourcePort = topPane.getDatasourcePort().getText();
                 String sourceName = topPane.getDatasourceName().getText();
@@ -54,12 +54,12 @@ public class OAGeneralPane extends JPanel {
                 String sourcePassword = topPane.getDatasourcePassword().getText();
 
                 System.out.println(sourceType);
-                Connection conn = DBUtils.getConnection(sourceType,sourceIP,sourcePort,sourceName,sourceUsername,
+                Connection conn = DBUtils.getConnection(sourceType, sourceIP, sourcePort, sourceName, sourceUsername,
                         sourcePassword);
-                if ( null != conn ){
+                if (null != conn) {
                     topPane.getTestConnLabel().setText("      Success! ");
                     topPane.getTestConnLabel().setForeground(Color.blue);
-                }else {
+                } else {
                     topPane.getTestConnLabel().setText("      Error! ");
                     topPane.getTestConnLabel().setForeground(Color.red);
                 }
@@ -83,9 +83,9 @@ public class OAGeneralPane extends JPanel {
                 boolean l4 = bottomPane.getServiceRBtn().isSelected();
                 boolean l5 = bottomPane.getDAORBtn().isSelected();
                 boolean l6 = bottomPane.getMapperRBtn().isSelected();
-                GeneratorCheckBoxLabel label = new GeneratorCheckBoxLabel(l1,l2,l3,l4,l5,l6);
+                GeneratorCheckBoxLabel label = new GeneratorCheckBoxLabel(l1, l2, l3, l4, l5, l6);
 
-                String sourceType = (String)topPane.getDatasourceType().getSelectedItem();
+                String sourceType = (String) topPane.getDatasourceType().getSelectedItem();
                 String sourceIP = topPane.getDatasourceIP().getText();
                 String sourcePort = topPane.getDatasourcePort().getText();
                 String sourceName = topPane.getDatasourceName().getText();
@@ -115,10 +115,10 @@ public class OAGeneralPane extends JPanel {
                     info.setDiskPath(diskPath);
 
                     System.out.println(info.toString());
-                    OAGeneralCodeUtils codeGenerateUtils = new OAGeneralCodeUtils( info );
-                    codeGenerateUtils.generate( label );
+                    OAGeneralCodeUtils codeGenerateUtils = new OAGeneralCodeUtils(info);
+                    codeGenerateUtils.generate(label);
                     System.out.println("======Code Generator Success=======");
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     System.out.println("======Code Generator failure=======");
                     ex.printStackTrace();
                 }

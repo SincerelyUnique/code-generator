@@ -22,14 +22,14 @@ import java.awt.*;
 public class MysqlBottomPane extends JPanel {
 
     @Getter
-    private JCheckBox entityRBtn,DTORBtn,ServiceRBtn,DAORBtn,MapperRBtn,ControllerRBtn;
+    private JCheckBox entityRBtn, DTORBtn, ServiceRBtn, DAORBtn, MapperRBtn, ControllerRBtn;
 
     @Getter
     private JButton systemDatabase;
 
     public MysqlBottomPane() {
         setLayout(new GridBagLayout());
-        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.generatorType",PropertyUtils.GENERATOR_PATH)), new EmptyBorder(8, 0, 0, 0)));
+        setBorder(new CompoundBorder(new TitledBorder(PropertyUtils.getValue("label.generatorType", PropertyUtils.GENERATOR_PATH)), new EmptyBorder(8, 0, 0, 0)));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -65,7 +65,7 @@ public class MysqlBottomPane extends JPanel {
         gbc.gridy++;
         gbc.fill = GridBagConstraints.NONE;
         gbc.anchor = GridBagConstraints.CENTER;
-        add((systemDatabase = new JButton(PropertyUtils.getValue("btn.generator",PropertyUtils.GENERATOR_PATH))), gbc);
+        add((systemDatabase = new JButton(PropertyUtils.getValue("btn.generator", PropertyUtils.GENERATOR_PATH))), gbc);
         systemDatabase.setEnabled(true);
     }
 }

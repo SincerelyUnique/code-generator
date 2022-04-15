@@ -26,7 +26,7 @@ public class TextPane extends JPanel {
     private TextRightPane rightPane;
 
 
-    public TextPane( ) {
+    public TextPane() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -94,12 +94,12 @@ public class TextPane extends JPanel {
                 String spaceLength = String.valueOf(TextUtils.countSpace(text));
 
                 // label
-                String byteLen = PropertyUtils.getValue("content.byteLength",PropertyUtils.GENERATOR_PATH);
-                String letterLen = PropertyUtils.getValue("content.letterLength",PropertyUtils.GENERATOR_PATH);
-                String chineseLen =PropertyUtils.getValue("content.chineseLength",PropertyUtils.GENERATOR_PATH);
-                String spaceLen = PropertyUtils.getValue("content.spaceLength",PropertyUtils.GENERATOR_PATH);
-                centerPane.getTextOutputArea().setText( byteLen+deal+"\r\n"+letterLen+
-                        englishLetterLength+"\r\n"+chineseLen+chineseLength+"\r\n"+spaceLen+
+                String byteLen = PropertyUtils.getValue("content.byteLength", PropertyUtils.GENERATOR_PATH);
+                String letterLen = PropertyUtils.getValue("content.letterLength", PropertyUtils.GENERATOR_PATH);
+                String chineseLen = PropertyUtils.getValue("content.chineseLength", PropertyUtils.GENERATOR_PATH);
+                String spaceLen = PropertyUtils.getValue("content.spaceLength", PropertyUtils.GENERATOR_PATH);
+                centerPane.getTextOutputArea().setText(byteLen + deal + "\r\n" + letterLen +
+                        englishLetterLength + "\r\n" + chineseLen + chineseLength + "\r\n" + spaceLen +
                         spaceLength);
             }
         });

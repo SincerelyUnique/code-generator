@@ -10,5 +10,4 @@ import ${package_name}.model.${table_name};
 public interface ${table_name}Repository extends JpaRepository<${table_name}, String> {
 
 
-
 }

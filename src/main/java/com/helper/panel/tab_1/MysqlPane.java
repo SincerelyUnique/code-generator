@@ -29,7 +29,7 @@ public class MysqlPane extends JPanel {
     private MysqlRightPane MysqlRightPane;
 
 
-    public MysqlPane( ) {
+    public MysqlPane() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
@@ -54,12 +54,12 @@ public class MysqlPane extends JPanel {
                 String sourcePassword = MysqlTopPane.getDatasourcePassword().getText();
 
                 System.out.println(sourceType);
-                Connection conn = DBUtils.getConnection(sourceType,sourceIP,sourcePort,sourceName,sourceUsername,
+                Connection conn = DBUtils.getConnection(sourceType, sourceIP, sourcePort, sourceName, sourceUsername,
                         sourcePassword);
-                if ( null != conn ){
+                if (null != conn) {
                     MysqlTopPane.getTestConnLabel().setText("      Success! ");
                     MysqlTopPane.getTestConnLabel().setForeground(Color.blue);
-                }else {
+                } else {
                     MysqlTopPane.getTestConnLabel().setText("      Error! ");
                     MysqlTopPane.getTestConnLabel().setForeground(Color.red);
                 }
@@ -83,7 +83,7 @@ public class MysqlPane extends JPanel {
                 boolean l4 = MysqlBottomPane.getServiceRBtn().isSelected();
                 boolean l5 = MysqlBottomPane.getDAORBtn().isSelected();
                 boolean l6 = MysqlBottomPane.getMapperRBtn().isSelected();
-                GeneratorCheckBoxLabel label = new GeneratorCheckBoxLabel(l1,l2,l3,l4,l5,l6);
+                GeneratorCheckBoxLabel label = new GeneratorCheckBoxLabel(l1, l2, l3, l4, l5, l6);
 
                 String sourceType = (String) MysqlTopPane.getDatasourceType().getSelectedItem();
                 String sourceIP = MysqlTopPane.getDatasourceIP().getText();
@@ -115,10 +115,10 @@ public class MysqlPane extends JPanel {
                     info.setDiskPath(diskPath);
 
                     System.out.println(info.toString());
-                    CodeGenerateUtils codeGenerateUtils = new CodeGenerateUtils( info );
-                    codeGenerateUtils.generate( label );
+                    CodeGenerateUtils codeGenerateUtils = new CodeGenerateUtils(info);
+                    codeGenerateUtils.generate(label);
                     System.out.println("======Code Generator Success=======");
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     System.out.println("======Code Generator failure=======");
                     ex.printStackTrace();
                 }

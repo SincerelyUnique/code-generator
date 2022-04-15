@@ -16,28 +16,31 @@ public class TextUtils {
 
     /**
      * 大写字母转小写
+     *
      * @param text 文本
      * @return 小写文本
      */
-    public static String upperToLower( String text ){
+    public static String upperToLower(String text) {
         return text.toLowerCase();
     }
 
     /**
      * 小写字母转大写
+     *
      * @param text 文本
      * @return 小写文本
      */
-    public static String lowerToUpper( String text ){
+    public static String lowerToUpper(String text) {
         return text.toUpperCase();
     }
 
     /**
      * 字符串转Unicode
+     *
      * @param text 文本
      * @return unicode编码
      */
-    public static String stringToUnicode( String text ){
+    public static String stringToUnicode(String text) {
         StringBuffer unicode = new StringBuffer();
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
@@ -48,10 +51,11 @@ public class TextUtils {
 
     /**
      * Unicode转字符串
+     *
      * @param text 文本
      * @return 字符串
      */
-    public static String unicodeToString( String text ){
+    public static String unicodeToString(String text) {
         StringBuffer string = new StringBuffer();
         String[] hex = text.split("\\\\u");
         for (int i = 1; i < hex.length; i++) {
@@ -63,28 +67,30 @@ public class TextUtils {
 
     /**
      * 文本字节长度统计
+     *
      * @param text 文本
      * @return 长度
      */
-    public static String countByte( String text ){
+    public static String countByte(String text) {
         try {
             return String.valueOf(text.getBytes("gbk").length);
-        }catch (Exception e){
+        } catch (Exception e) {
             return "0";
         }
     }
 
     /**
      * 获取文本中英文字母数量
+     *
      * @param text 文本
      * @return 数量
      */
-    public static String englishLetterLength( String text ){
+    public static String englishLetterLength(String text) {
         Integer length = 0;
         byte[] bytes = text.getBytes();
         for (int i = 1; i < bytes.length; i++) {
             byte c = bytes[i];
-            if( c>='A'&&c<='Z' || c>='a'&&c<='z' ){
+            if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z') {
                 length++;
             }
         }
@@ -93,6 +99,7 @@ public class TextUtils {
 
     /**
      * 统计字母数
+     *
      * @param str 文本
      * @return 字母数
      */
@@ -100,7 +107,7 @@ public class TextUtils {
         int count = 0;
         Pattern p = Pattern.compile("[a-zA-Z]");
         Matcher m = p.matcher(str);
-        while(m.find()){
+        while (m.find()) {
             count++;
         }
         return count;
@@ -108,6 +115,7 @@ public class TextUtils {
 
     /**
      * 统计汉字数
+     *
      * @param str 文本
      * @return 汉字个数
      */
@@ -115,7 +123,7 @@ public class TextUtils {
         int count = 0;
         Pattern p = Pattern.compile("[\\u4e00-\\u9fa5]");
         Matcher m = p.matcher(str);
-        while(m.find()){
+        while (m.find()) {
             count++;
         }
         return count;
@@ -123,6 +131,7 @@ public class TextUtils {
 
     /**
      * 统计空格数
+     *
      * @param str 文本
      * @return 空格数
      */
@@ -130,7 +139,7 @@ public class TextUtils {
         int count = 0;
         Pattern p = Pattern.compile("\\s");
         Matcher m = p.matcher(str);
-        while(m.find()){
+        while (m.find()) {
             count++;
         }
         return count;
@@ -144,7 +153,7 @@ public class TextUtils {
             a = "中文";
             num = a.getBytes("gbk").length;
             System.out.println(num);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
